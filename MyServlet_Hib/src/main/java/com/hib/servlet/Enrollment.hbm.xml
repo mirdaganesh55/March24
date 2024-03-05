@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 5, 2024, 4:14:14 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hib.servlet.Enrollment" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="enrollments">
+        <id name="enrollmentId" type="int">
+            <column name="enrollment_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="studentId" optimistic-lock="true" type="int" unique="false">
+            <column name="student_id"/>
+        </property>
+        <property generated="never" lazy="false" name="courseId" optimistic-lock="true" type="int" unique="false">
+            <column name="course_id"/>
+        </property>
+        <property generated="never" lazy="false" name="enrollmentDate" optimistic-lock="true" type="java.util.Date" unique="false">
+            <column name="enrollment_date"/>
+        </property>
+    </class>
+</hibernate-mapping>

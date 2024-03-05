@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 5, 2024, 2:22:21 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hib.servlet.Course" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="courses">
+        <id name="courseId" type="int">
+            <column name="course_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="courseName" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="course_name"/>
+        </property>
+        <property generated="never" lazy="false" name="instructor" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="instructor"/>
+        </property>
+    </class>
+</hibernate-mapping>

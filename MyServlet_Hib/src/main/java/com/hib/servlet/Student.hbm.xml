@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 5, 2024, 11:59:14 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.hib.servlet.Student" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="students">
+        <id name="studentId" type="int">
+            <column name="student_id"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="firstName" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="first_name"/>
+        </property>
+        <property generated="never" lazy="false" name="lastName" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="last_name"/>
+        </property>
+        <property generated="never" lazy="false" name="dateOfBirth" optimistic-lock="true" type="java.util.Date" unique="false">
+            <column name="date_of_birth"/>
+        </property>
+        <property generated="never" lazy="false" name="gender" optimistic-lock="true" type="char" unique="false">
+            <column name="gender"/>
+        </property>
+        <property generated="never" lazy="false" name="email" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="email"/>
+        </property>
+        <property generated="never" lazy="false" name="phoneNumber" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="phone_number"/>
+        </property>
+        <property generated="never" lazy="false" name="address" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="address"/>
+        </property>
+    </class>
+</hibernate-mapping>
