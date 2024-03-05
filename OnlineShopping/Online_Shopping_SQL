@@ -1,0 +1,69 @@
+create database Online_Shopping;
+use Online_Shopping;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    rating DECIMAL(3, 2),
+    price DECIMAL(10, 2),
+    description TEXT,
+    imagePath VARCHAR(255)
+);
+
+CREATE TABLE orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    order_date TIMESTAMP,
+    total_amount DECIMAL(10, 2),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE order_items (
+    id INT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    subtotal DECIMAL(10, 2),
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+CREATE TABLE login (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    login_date TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+DELETE FROM products WHERE id = 17;
+
+select * from products;
+INSERT INTO products (id,name, rating, price, description, imagePath) 
+VALUES (1,'The Catcher in the Rye', 4.5, 19.99, 'Classic novel by J.D. Salinger', '/images/books/catcher_in_the_rye.jpg'),
+       (2,'To Kill a Mockingbird', 4.7, 15.99, 'Classic novel by Harper Lee', '/images/books/to_kill_a_mockingbird.jpg'),
+       (3,'The Great Gatsby', 4.6, 17.99, 'F. Scott Fitzgerald\'s iconic novel', '/images/books/great_gatsby.jpg'),
+       (4,'1984', 4.8, 21.99, 'George Orwell\'s dystopian masterpiece', '/images/books/1984.jpg'),
+       (5,'The Hobbit', 4.5, 18.99, 'J.R.R. Tolkien\'s classic fantasy novel', '/images/books/the_hobbit.jpg'),
+       (6,'Harry Potter and the Sorcerer\'s Stone', 4.9, 24.99, 'First book in J.K. Rowling\'s magical series', '/images/books/harry_potter_sorcerers_stone.jpg'),
+       (7,'The Lord of the Rings', 4.9, 29.99, 'Epic fantasy trilogy by J.R.R. Tolkien', '/images/books/lord_of_the_rings.jpg'),
+       (8,'iPhone 15 Pro', 4.8, 1099.99, 'Latest Apple smartphone with advanced features', '/images/phones/iphone_15_pro.jpg'),
+       (9,'Samsung Galaxy S21', 4.6, 899.99, 'Powerful Android smartphone with a great camera', '/images/phones/samsung_galaxy_s21.jpg'),
+       (10,'Google Pixel 6', 4.7, 799.99, 'Flagship Google smartphone with impressive camera capabilities', '/images/phones/google_pixel_6.jpg'),
+       (11,'OnePlus 9 Pro', 4.5, 899.99, 'High-performance flagship phone by OnePlus', '/images/phones/oneplus_9_pro.jpg'),
+       (12,'Xiaomi Mi 11', 4.4, 699.99, 'Feature-rich smartphone from Xiaomi', '/images/phones/xiaomi_mi_11.jpg'),
+       (13,'Sony Xperia 1 III', 4.6, 1099.99, 'Premium Sony smartphone with advanced camera technology', '/images/phones/sony_xperia_1_iii.jpg'),
+       (14,'Huawei P40 Pro', 4.5, 899.99, 'Flagship Huawei smartphone with impressive camera capabilities', '/images/phones/huawei_p40_pro.jpg'),
+       (15,'Elegant Evening Gown', 4.6, 129.99, 'Stylish long dress for special occasions', '/images/dresses/evening_gown.jpg'),
+       (16,'Casual Summer Dress', 4.3, 39.99, 'Comfortable and stylish dress for everyday wear', '/images/dresses/summer_dress.jpg'),
+       (17,'Bohemian Maxi Dress', 4.4, 49.99, 'Flowy and colorful dress for a boho-chic look', '/images/dresses/bohemian_maxi_dress.jpg'),
+       (21,'Cool Boys T-Shirt', 4.5, 19.99, 'Comfortable and stylish t-shirt for boys', '/images/dresses/tshirt.jpg'),
+(22,'Denim Jeans for Boys', 4.2, 29.99, 'Classic denim jeans for a trendy look', '/images/dresses/denim_jeans.jpg'),
+(23,'Sporty Hoodie for Boys', 4.4, 39.99, 'Hooded sweatshirt for active boys', '/images/dresses/sporty_hoodie.jpg'),
+(24,'Casual Sneakers for Boys', 4.6, 49.99, 'Trendy sneakers for everyday wear', '/images/dresses/sneakers.jpg'),
+(25,'Cargo Shorts for Boys', 4.0, 24.99, 'Comfortable cargo shorts with multiple pockets', '/images/dresses/cargo_shorts.jpg');
+
