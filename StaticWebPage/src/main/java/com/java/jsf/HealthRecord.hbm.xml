@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 11, 2024, 11:14:33 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class dynamic-insert="false" dynamic-update="false" mutable="true" name="com.java.jsf.HealthRecord" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="HEALTH_RECORD">
+        <id name="id" type="java.lang.String">
+            <column name="ID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="patientName" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="PATIENTNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="age" optimistic-lock="true" type="int" unique="false">
+            <column name="AGE"/>
+        </property>
+        <property generated="never" lazy="false" name="diagnosis" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="DIAGNOSIS"/>
+        </property>
+        <property generated="never" lazy="false" name="doctorName" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="DOCTORNAME"/>
+        </property>
+        <property generated="never" lazy="false" name="medication" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="MEDICATION"/>
+        </property>
+        <property generated="never" lazy="false" name="prescription" optimistic-lock="true" type="java.lang.String" unique="false">
+            <column name="PRESCRIPTION"/>
+        </property>
+    </class>
+</hibernate-mapping>

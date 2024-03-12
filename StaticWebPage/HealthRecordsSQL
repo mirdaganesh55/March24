@@ -1,0 +1,44 @@
+create database HealthcareRecords;
+use HealthcareRecords;
+select * from health_records;
+ drop table if exists HEALTH_RECORD
+create table HEALTH_RECORD (
+        ID varchar(255) not null,
+        PATIENTNAME varchar(255),
+        AGE integer,
+        DIAGNOSIS varchar(255),
+        DOCTORNAME varchar(255),
+        MEDICATION varchar(255),
+        PRESCRIPTION varchar(255),
+        primary key (ID)
+    );
+    drop table if exists CONTACTUS
+    create table CONTACTUS (
+        ID varchar(255) not null,
+        NAME varchar(255),
+        EMAIL varchar(255),
+        MESSAGE varchar(255),
+        primary key (ID)
+    );
+INSERT INTO health_records (id, patient_name, age, diagnosis, doctor_name, medication, prescription)
+VALUES
+(1, 'John Doe', 30, 'Common Cold', 'Dr. Smith', 'Ibuprofen', 'Take as needed'),
+(2, 'Jane Smith', 45, 'Hypertension', 'Dr. Johnson', 'Lisinopril', 'Daily dosage'),
+(3, 'Bob Johnson', 22, 'Influenza', 'Dr. White', 'Tamiflu', 'Prescription only'),
+(4, 'Alice Brown', 55, 'Diabetes', 'Dr. Davis', 'Metformin', 'Twice daily'),
+(5, 'Charlie Lee', 28, 'Allergies', 'Dr. Wilson', 'Zyrtec', 'Once a day'),
+(6, 'Eva Miller', 40, 'Migraine', 'Dr. Harris', 'Sumatriptan', 'As needed'),
+(7, 'Frank Thomas', 60, 'Arthritis', 'Dr. Martinez', 'Celebrex', 'Prescription only'),
+(8, 'Grace Turner', 35, 'Asthma', 'Dr. Robinson', 'Albuterol', 'Inhaler as needed'),
+(9, 'Henry Adams', 48, 'Heart Disease', 'Dr. Garcia', 'Aspirin', 'Daily dosage'),
+(10, 'Ivy Carter', 25, 'Anxiety', 'Dr. Moore', 'Xanax', 'As needed'),
+(11, 'Aarav Sharma', 32, 'Fever', 'Dr. Gupta', 'Paracetamol', 'Take as needed'),
+(12, 'Diya Patel', 28, 'Dengue', 'Dr. Desai', 'Antipyretics', 'Prescription only'),
+(13, 'Aryan Singh', 45, 'Hypertension', 'Dr. Reddy', 'Losartan', 'Daily dosage'),
+(14, 'Kavya Kapoor', 38, 'Gastritis', 'Dr. Joshi', 'Omeprazole', 'Twice daily before meals'),
+(15, 'Advait Kumar', 22, 'Common Cold', 'Dr. Singhania', 'Cetrizine', 'As needed'),
+(16, 'Ananya Verma', 50, 'Diabetes', 'Dr. Sharma', 'Insulin', 'As prescribed'),
+(17, 'Rohan Gupta', 35, 'Allergies', 'Dr. Kapoor', 'Allegra', 'Once a day'),
+(18, 'Zara Khan', 28, 'Asthma', 'Dr. Ahmed', 'Ventolin', 'Inhaler as needed'),
+(19, 'Ishaan Raj', 40, 'Migraine', 'Dr. Khanna', 'Sumatriptan', 'Prescription only'),
+(20, 'Sanya Singh', 55, 'Arthritis', 'Dr. Mehra', 'Diclofenac', 'As needed');
